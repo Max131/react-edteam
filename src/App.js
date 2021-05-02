@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {Fragment} from 'react';
+import './styles/styles.scss';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+	// <Fragment>
+	// 	<div>
+	// 		<h1 className="first">Hola World!</h1>
+	// 		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ipsam hic dolor iste voluptatem, vitae dolorum tenetur numquam doloremque officia ipsum illo sapiente consequatur non eveniet veritatis. Maxime, tenetur, accusamus.</p>
+	// 	</div>
+	// 	<div>
+	// 		<h1>Hola World!</h1>
+	// 		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ipsam hic dolor iste voluptatem, vitae dolorum tenetur numquam doloremque officia ipsum illo sapiente consequatur non eveniet veritatis. Maxime, tenetur, accusamus.</p>
+	// 	</div>
+	// 	<img src="https://placeimg.com/320/200/nature" />
+	// </Fragment>
+	);
 
 export default App;
