@@ -1,28 +1,34 @@
 // import React, {Fragment} from 'react';
 import React, {Fragment} from 'react';
 import './styles/styles.scss';
-import Curso from './Curso';
+// import Curso from './Curso';
 import Banner from './Banner';
 import Formulario from './Formulario';
-
+import CourseGrid from './CourseGrid';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import Course from './Course';
 
 // const cursos = [
 // 	{
+// 		"id": 1,
 // 		"title": "React desde cero",
 // 		"image": "https://placeimg.com/480/320/tech",
 // 		"price": "26USD"
 // 	},
 // 	{
+// 		"id": 2,
 // 		"title": "HTML",
 // 		"image": "https://placeimg.com/480/320/nature",
 // 		"price": "15USD"
 // 	},
 // 	{
+// 		"id": 3,
 // 		"title": "JS",
 // 		"image": "https://placeimg.com/480/320/people",
 // 		"price": "32USD"
 // 	},
 // 	{
+// 		"id": 4,
 // 		"title": "CSS",
 // 		"image": "https://placeimg.com/480/320/arch",
 // 		"price": "22USD"
@@ -64,8 +70,25 @@ import Formulario from './Formulario';
 
 const App = () => (
 <>
- <Banner title="Mi banner" subtitle="Lorem ipsum dolor sit amet" />
- <Formulario />
+ {/*<Banner title="Mi banner" subtitle="Lorem ipsum dolor sit amet" />
+  <Formulario title="joying" />
+	<CourseGrid />
+*/}
+
+ <Router>
+	 <Switch>
+	 	<Route path="/" exact component={Banner} />
+	 	<Route path="/cursos" exact component={CourseGrid} />
+	 	<Route path="/curso/:id" exact component={Course} />
+	 	<Route path="/formulario" exact component={ () => <Formulario title="Formulario de contácto" />} />
+	 	<Route component={() => (
+	 		<div className="ed-grid">
+	 			<h1>Error 404</h1>
+	 			<p>No hay nada nadita!</p>
+	 		</div>
+	 		)} />
+	 </Switch>
+ </Router>
 </>
 )
 
