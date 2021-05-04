@@ -3,6 +3,29 @@ import React, {Fragment} from 'react';
 import './styles/styles.scss';
 import Curso from './Curso';
 
+const cursos = [
+	{
+		"title": "React desde cero",
+		"image": "https://placeimg.com/480/320/tech",
+		"price": "26USD"
+	},
+	{
+		"title": "HTML",
+		"image": "https://placeimg.com/480/320/nature",
+		"price": "15USD"
+	},
+	{
+		"title": "JS",
+		"image": "https://placeimg.com/480/320/people",
+		"price": "32USD"
+	},
+	{
+		"title": "CSS",
+		"image": "https://placeimg.com/480/320/arch",
+		"price": "22USD"
+	}
+]
+
 const App = () => (
 	// <Fragment>
 	// 	<div>
@@ -29,13 +52,9 @@ const App = () => (
 		  </div>
 		</div>
 	<div className="ed-grid m-grid-3">
- 		<Curso />
- 		<Curso />
- 		<Curso />
- 		<Curso />
- 		<Curso />
- 		<Curso />
- 		<Curso />
+		{
+			cursos.map(curso => <Curso title={curso.title} image={curso.image} price={curso.price} />)
+		}
  	</div>
 	</>
 	);
