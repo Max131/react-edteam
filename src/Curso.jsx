@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 
 const persona = {"name": "John", "lastname": "Doe", "edad": 23};
 
@@ -12,14 +13,13 @@ const curso = {
 }
 
 // const Curso = props => (
-const Curso = ({title, image, price}) => (
+const Curso = ({id, title, image, price}) => (
 	<article className="card">
   	<div className="img-container s-ratio-16-9 s-radius-tr s-radius-tl">
     	{/*<img src={props.image} alt={props.title} />*/}
-    	
-    	<img src={image? image : ''} alt={title? title: 'No title'} />
-
-
+      <Link to={`/cursos/${id}`}>
+    	 <img src={image? image : ''} alt={title? title: 'No title'} />
+      </Link>
  	  </div>
  		<div className="card__data s-border s-radius-br s-radius-bl s-pxy-2">
     	<h3 className="t5 s-mb-2 s-center">
